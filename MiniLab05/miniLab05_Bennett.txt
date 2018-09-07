@@ -1,0 +1,37 @@
+1) What are the advantages/disadvantages to both passing by reference
+and value?
+Passing by reference allows the variables value in memory to be directly changed
+allowing changes to be changed outside the scope of the function. This can be an
+advantage when needing to access multiple variables outside the function, but
+can also make tracking changes to variables more difficult as a programmer.
+
+Passing by value allows the variables value to only be changed within the scope 
+of the function but not externally. This can be advantagious in situations were
+the function should change only one value (with a return) or should change no
+values. A disadvantage, however, is that one one variable can be easily, without
+pointers/arrays, updated outside of the functions scope.
+
+ 
+2) Write a function that accumulates a running total, adding the
+input parameter each function call (e.g. static variable).  If the
+number gets over 1,000, exit.
+
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+void func( int num );
+
+void func( int num ){
+    if( num > 1000 ){
+        exit( EXIT_SUCCESS );
+    }else{
+        cout << num+num << endl;
+        func( num+num );
+    }
+}
+
+int main(){
+    func( 10 );
+}

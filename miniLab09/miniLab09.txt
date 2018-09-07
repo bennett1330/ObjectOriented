@@ -1,0 +1,97 @@
+Mini-Lab #9
+Matt Bennett
+
+1)  Describe the benefits to using inheritance IN YOUR OWN WORDS.  Why not just 
+    copy/paste/edit the same class to create multiple objects?
+    
+        Inheritance allows an object to be two (or more) classes at once with 
+        one object acting as the parent and the other acting as it's child 
+        while maintaining or overridding the properties of the parent. The
+        benefit of this method as opposed to copy and paste is that each object
+        of both the parent and child class will always have the defined
+        properties/methods etc of the parent class. This allows multiple types
+        of children to be re-cast as the parent class in instances where the 
+        specific type of child may be unknown while maintaining functionality
+        when using virtual.
+ 
+2)	What methods and attributes must be included in a base class that will be 
+        derived into the following types: motorcycle, supersonic jet, row boat?  
+    Describe the base class and how each method/attribute will change as we 
+        derive the other classes.  (You don't need to code it, but you need to 
+        show the pseudo-code or high-level descriptions.)
+        
+        class vehicle {
+            private:
+                string owner
+                string element // earth, water, air, fire of movement
+                int maxSpeed
+                int maxAcceleration
+                int monetaryValue
+                int maxPassengers
+                int mass
+                int volume
+                int array location // coordinates
+                // etc
+            public:
+                //each private variable has get/set functions 
+                virtual void print(){
+                    // prints some vehicle stuff
+                }
+        };   
+        class motorcycle: public vehicle {
+                // unique to motorcycle things & methods
+                // some different print functionality
+                
+                public:
+                    void knockOver(){
+                        // does thing
+                    }
+        };
+        
+        class supersonicJet: public vehicle {
+                // unique to supersonicJet things & methods
+                public:
+                    void print(){
+                        // different print out
+                    }
+                    void launch(){
+                        // leave ground
+                    }
+        };
+        
+        class rowBoat: public vehicle {
+                // unique to rowBoat things & methods
+                public:
+                    void row( int distance, int angle ){
+                        // move position
+                    }
+                    void ground(){
+                        // cant move
+                    }
+                    void launch(){
+                        // leave ground
+                    }
+        };
+
+3)	Given the following code, instantiate 2 objects with different variables types.  Which work properly?  Choose any combination you like.  Prove it works with the code and a screenshot of the result.
+        
+        
+        // UPDATED CODE -- SCREENSHOT SUBMITTED IN PNG
+        #include <iostream>
+        #include <string>
+        using namespace std;
+        
+        template <class T, class U, class V>
+        T miniLab09(U var0, V var1) {
+             cout << var0 << " " << var1 << endl;
+             var1 = (var0 + var1)/2;
+             return (T)var1;
+        }
+        
+        int main(){
+             char var0 = 'Q';
+             int var1 = 10;
+             int var2 = miniLab09<int, char, int>( var0, var1 );
+             return 0;
+        }
+

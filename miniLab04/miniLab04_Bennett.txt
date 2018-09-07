@@ -1,0 +1,97 @@
+Mini-Lab #4
+ELEC 3150
+Matt Bennett
+
+1) Show me the steps for a binary search of the following sorted array for the 
+number 15.
+
+		1     8		10		14		16		26		50
+                            ^^
+        14 (at middle index 3) < 15; number must be at index > 3
+        
+		1     8		10		14		16		26		50
+                                            ^^        
+        26 (at new middle index 5) > 15; number must be 3 < index < 5
+        
+        16 (at new middle index 4) > 15; number must be 3 < index < 4
+        
+        index must be a whole integer; 15 is not in the list
+
+
+2) Using bubble sort, sort the following array.
+		100     75     25     50     0
+		
+        Compare 100 to 75; Swap
+        Compare 100 to 25; Swap
+        Compare 100 to 50; Swap
+        Compare 100 to 0; Swap
+        
+        75     25     50     0     100
+        
+        Compare 75 to 25; Swap
+        Compare 75 to 50; Swap
+        Compare 75 to 0; Swap
+        Compare 75 to 100; No change
+        
+        25     50     0     75     100
+        
+        Compare 25 to 50; No change
+        Compare 50 to 0; Swap
+        Compare 50 to 75; No change
+        Compare 75 to 100; No change
+        
+        25     0     50     75     100
+        
+        
+        Compare 25 to 0; Swap
+        Compare 25 to 50; No change
+        Compare 50 to 75; No change
+        Compare 75 to 100; No change
+        
+        0     25     50     75     100
+        
+        Sort complete since no change on last run through.
+
+3) Using selection sort, sort the above array.
+        100     75     25     50     0
+        
+        Compare 100 to 75; 75 Set as low value
+        Compare 75 to 25; 25 Set as low value
+        Compare 25 to 50; No change
+        Compare 25 to 0; 0 Set as low value
+        0 and 100 switched
+        
+        0     75     25     50     100
+        
+        Compare 75 to 25; 25 Set as low value
+        Compare 25 to 50; No change
+        Compare 25 to 100; No change
+        75 and 25 switched
+        
+        0     25     75      50      100
+        
+        Compare 75 to 50; 50 Set to low value
+        Compare 50 to 100; No change
+        75 and 50 switched
+        
+        0     25     50     75     100
+        
+        Compare 75 to 100; 75 Set to low value
+        75 "switched" with 75
+        
+        Sort complete since all indexes have been iterated over.
+
+4) Assume you start with an unsorted array.  Should you sort then search? Or 
+just use a linear search? Why?
+
+The worst case of a linear search requires each array value to be compared
+to the search value.
+The best case of sort of a presorted array, each array value to be compared 
+to the next array value.
+If the worst case of linear search is comparable to the best case of just the
+sort without even considering the additional time of the linear search, it is 
+clear that, unless the array must be sorted for later use, a linear search 
+should be used.
+
+
+	

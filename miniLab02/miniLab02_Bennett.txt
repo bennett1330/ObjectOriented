@@ -1,0 +1,61 @@
+Mini-Lab #2
+
+Complete the following and hand in all answers and/or code.  Submit on Blackboard.  Late assignments will be penalized 15 points per 24 hour period.  You are to work independently and any collaboration will be penalized as described in the syllabus.
+
+
+1) Write a program that reads an input of a grade (A through F, no + or -).  If the grade is outside of the range, return an error and warn the user.  Output the range of the score that fits the grade (e.g. A is 100 to 90, B is 89 to 80, C is 79 to 70, D is 69 to 60, F is under 60.)
+	a) Use an if statement.
+	b) Use the same code, but change it to use a switch statement.
+	
+	(Attached)
+
+-----------------------------------------	
+2) Find the bug:
+	#include <iostream>
+	using namespace std;
+	int main(){
+		int number;
+		cout << "Enter a number ";
+		cin >> number;
+		if(number = 10)  // should be ==, = is for variable assignment.
+			cout << "?!?!?!" << endl;
+		if(number < 10)
+			cout << "!!!!!!" << endl;
+		if(number > 10)
+			cout << "??????" << endl;
+	}
+
+-----------------------------------------
+3) What is the outcome of the following code? Explain WHY.
+	x = 5;
+	if(x++ > 5)
+		cout << "Greater!";
+	else
+		cout << "Not!";
+		
+Output is "Not!" because the x variable is post-incremented, meaning it is not increased
+to 6 until after the if-else statement.
+		
+-----------------------------------------
+4) What if we change #3's code to ++x? Explain (not just coding it)
+
+Output with ++x changes the output to "Greater!" because the x variable is pre-incremented,
+meaning the x value is increased to 6 before the current statement.
+
+-----------------------------------------
+5) Rank the 3 types of loops (do-while, while, for).  What is the basis of your ranking.
+
+1. while
+    - maintains code readability for multiple types while allowing significant customizations
+2. do-while
+    - ranks 2nd because the desired behavior, while infrequent, is not easily replicated
+    in a readable manner.
+3. for
+    - for loop is 3rd because, although it is ysed frequently, it is basically a shorthand 
+    implementation of a while loop
+        int i = 0;
+        while( i < 8 ){
+            // code
+            i++;
+        }
+	

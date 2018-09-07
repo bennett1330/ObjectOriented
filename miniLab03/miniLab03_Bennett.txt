@@ -1,0 +1,65 @@
+Mini-Lab #3
+ELEC 3150
+Matt Bennett (bennetts4@wit.edu)
+
+1) Explain the algorithm in comments:
+
+	int main() {
+		cout << "5 numbers";
+		int a, b, c, d, e;
+		cin >> a >> b >> c >> d >> e; // Reads first 5 integer input values from
+		                              // console input. (Must be space seperated
+		                              // additional input will be ignored.)
+		int x;
+		x = a + b + c + d + e;        // x is set equal to the sum of the values
+		                              // of the integers a, b, ..., e.
+		int f;
+		f = x/5;                      // f is set equal to the value x, the sum
+		                              // of the entered integers, divided by 5.
+		                              // This is the average of the entered
+		                              // values. Any decimimal places are
+		                              // rounded down
+		                              // f = floorOf( average( a, b, ..., e ) )
+	}
+
+2) Describe in pseudocode how to make light come from a lamp.  Be as detailed, 
+comprehensive, and descriptive as possible.  This should include if something 
+doesn't go as planned/expected.
+
+    Locate on knob or button.
+    Turn knob or press button to on position.
+    **Loop**
+    Check if light is on.
+    If the light is on:
+        Good job, you're done.
+        End program.
+    If the light is NOT on:
+        Check if light is plugged in.
+        If light is NOT plugged in:
+            Locate outlet.
+            Plug in light.
+            Next loop iteration (continue).
+        Check if lightblub is in lamp.
+        If light bulb is NOT in lamp:
+            Locate light bulb.
+            Screw in light bulb.
+            Next loop iteration (continue).
+        Check if power works in another room.
+        If power is NOT on in other room:
+            The gods have given you a mighty excuse to go have a drink.
+            End program. Try again in an hour.
+        Check if lamp turns on when plugged into outlet in other room.
+        If lamp does NOT work in other room:
+            Find a company name and product number.
+            Ask google why your lamp doesn't work.
+            Obey the Googles.
+            Next Loop iteration (continue).
+            
+        
+	
+Q: How many helpdesk guys does it take to change a light bulb?
+
+A: The helpdesk has received your request concerning your problem and has 
+assigned you request service number 39,712. Please use this number for any 
+future reference to this light bulb issue.
+            
